@@ -48,11 +48,13 @@ const News = ({ simplified }) => {
               <p>
                 {news.description.length > 150 ? `${news.description.substring(0, 150)} ...` : news.description}
               </p>
+              <div className='provider-footer'>
               <div className='provider-container'>
                 <Avatar src={news.provider[0]?.image?.thumbnail?.contentUrl || demoImage} alt="news"/>
                 <Text className='provider-name'>{news.provider[0]?.name}</Text>
               </div>
               <Text>{moment(news.datePublished).startOf('ss').fromNow()}</Text>
+              </div>
             </a>
           </Card>
         </Col>
